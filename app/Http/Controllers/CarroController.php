@@ -10,7 +10,7 @@ class CarroController extends Controller
 {
     public function FormularioCadastroCarro()
     {
-        return view('cadastrarCarro');
+        return view('CadastrarCarro');
     }
 
     public function MostrarEditarCarro(){
@@ -38,5 +38,12 @@ class CarroController extends Controller
 
         Carro::create($dadosCarro);
         return Redirect::route('home');
+    }
+
+    public function ApagarBancoCarro(Carro $registrosCarros){
+        //dd($registrosCarro);
+        $registrosCarros->delete();
+       //Carro::findOrFail($id)->delete();
+        return Redirect::route('editar-carro');
     }
 }

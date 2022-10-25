@@ -1,12 +1,12 @@
 @extends('padrao')
 @section('content')
 <section>
-  <div class="container cadastroCarro">
+  <div class="container cadastroCaminhao">
     <form class="row g-3" method="post" action="{{route('salvar-banco-carro')}}">
       @csrf
       <div class="col-md-12">
         <label for="inputModelo" class="form-label">Modelo</label>
-        <input type="text" name="modelo" value="{{old('modelo',registroCaminhoes->modelo)}}" class="form-control" id="inputModelo" placeholder="ONIX">
+        <input type="text" name="modelo" value="{{old('modelo')}}" class="form-control" id="inputModelo" placeholder="ONIX">
         @error('modelo')
         <div class="text-light">*Preencher o campo modelo.</div>
         @enderror
